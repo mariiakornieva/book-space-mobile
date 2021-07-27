@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import Font, { useFonts } from 'expo-font';
+import { Button } from '../components';
 
 export default function EntryScreen() {
   const [loaded] = useFonts({
@@ -24,7 +25,9 @@ export default function EntryScreen() {
         <Text style={styles.titleText}>Book Space</Text>
       </View>
 
-      <View style={{ flex: 2 }}>
+      <View style={{
+        marginVertical: 60,
+      }}>
         <Image
           style={{
             width: 288,
@@ -32,6 +35,42 @@ export default function EntryScreen() {
           }}
           source={require("../assets/images/main.png")}
         />
+      </View>
+
+      <View>
+        <Button
+          label="Sign In"
+          style={{ marginBottom: 32 }}
+          size={{ width: 280, height: 46 }}
+          primary
+        />
+        <Button
+          label="Sign Up"
+          style={{ marginBottom: 32 }}
+          size={{ width: 280, height: 46 }}
+        />
+        <View style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+        }}>
+          <Text style={{
+            color: '#846E63',
+            marginRight: 8,
+            fontSize: 18,
+            fontFamily: 'RhodiumLibre',
+          }}
+          >
+            Skip
+          </Text>
+          <Image
+            source={require('../assets/images/skip.png')}
+            style={{
+              width: 12,
+              height: 10,
+            }}
+          />
+        </View>
       </View>
     </View>
   );
@@ -42,10 +81,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ebd7d0',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
   },
   title: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     display: 'flex',
     alignItems: 'center',
