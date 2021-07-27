@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
+import Font, { useFonts } from 'expo-font';
 
 export default function EntryScreen() {
+  const [loaded] = useFonts({
+    'RhodiumLibre': require('../assets/fonts/Rhodium_Libre/RhodiumLibre-Regular.ttf'),
+  });
+
+  if (!loaded) {
+    return null;
+  }
 
   return (
     <View style={styles.container}>
@@ -45,7 +53,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 48,
-    fontFamily: 'Rhodium Libre',
+    fontFamily: 'RhodiumLibre',
     color: '#352d39',
     marginLeft: 6,
   },
