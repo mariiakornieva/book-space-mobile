@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
-import Font, { useFonts } from 'expo-font';
+import React from 'react';
+import { StyleSheet, View, Text, Image, Pressable } from 'react-native';
+import { useFonts } from 'expo-font';
 import { Button } from '../components';
+import { useNavigation } from '@react-navigation/native';
 
-export default function EntryScreen() {
+export function EntryScreen() {
   const [loaded] = useFonts({
     'RhodiumLibre': require('../assets/fonts/Rhodium_Libre/RhodiumLibre-Regular.ttf'),
   });
+
+  const nav = useNavigation();
 
   if (!loaded) {
     return null;
@@ -38,39 +41,47 @@ export default function EntryScreen() {
       </View>
 
       <View>
-        <Button
-          label="Sign In"
-          style={{ marginBottom: 32 }}
-          size={{ width: 280, height: 46 }}
-          primary
-        />
-        <Button
-          label="Sign Up"
-          style={{ marginBottom: 32 }}
-          size={{ width: 280, height: 46 }}
-        />
-        <View style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-        }}>
-          <Text style={{
-            color: '#846E63',
-            marginRight: 8,
-            fontSize: 18,
-            fontFamily: 'RhodiumLibre',
-          }}
-          >
-            Skip
-          </Text>
-          <Image
-            source={require('../assets/images/skip.png')}
-            style={{
-              width: 12,
-              height: 10,
-            }}
+        <Pressable onPress={() => nav.navigate('SignIn')}>
+          <Button
+            label="Sign In"
+            style={{ marginBottom: 32 }}
+            size={{ width: 280, height: 46 }}
+            primary
           />
-        </View>
+        </Pressable>
+
+        <Pressable onPress={() => nav.navigate('SignUp')}>
+          <Button
+            label="Sign Up"
+            style={{ marginBottom: 32 }}
+            size={{ width: 280, height: 46 }}
+          />
+        </Pressable>
+
+        {/* <Pressable onPress={() => nav.navigate('Home')}> */}
+          <View style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+          }}>
+            <Text style={{
+              color: '#846E63',
+              marginRight: 8,
+              fontSize: 18,
+              fontFamily: 'RhodiumLibre',
+            }}
+            >
+              Skip
+            </Text>
+            <Image
+              source={require('../assets/images/skip.png')}
+              style={{
+                width: 12,
+                height: 10,
+              }}
+            />
+          </View>
+        {/* </Pressable> */}
       </View>
     </View>
   );
