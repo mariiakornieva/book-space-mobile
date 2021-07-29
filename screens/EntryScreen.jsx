@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, Pressable } from 'react-native';
 import { useFonts } from 'expo-font';
-import { Button } from '../components';
+import { Button } from '../shared/components';
 import { useNavigation } from '@react-navigation/native';
+import { globalStyles } from '../shared/styles';
 
 export function EntryScreen() {
   const [loaded] = useFonts({
@@ -16,7 +17,7 @@ export function EntryScreen() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       <View style={styles.title}>
         <Image
           style={{
@@ -60,10 +61,12 @@ export function EntryScreen() {
 
         <View style={{
           flexDirection: 'row',
-          alignItems: 'center',
           justifyContent: 'flex-end',
         }}>
-          <Pressable onPress={() => nav.navigate('Home')}>
+          <Pressable onPress={() => nav.navigate('Home')} style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}>
             <Text style={{
               color: '#846E63',
               marginRight: 8,
@@ -88,12 +91,6 @@ export function EntryScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ebd7d0',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   title: {
     // flex: 1,
     flexDirection: 'row',
