@@ -58,12 +58,12 @@ export function EntryScreen() {
           />
         </Pressable>
 
-        {/* <Pressable onPress={() => nav.navigate('Home')}> */}
-          <View style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-          }}>
+        <View style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+        }}>
+          <Pressable onPress={() => nav.navigate('Home')}>
             <Text style={{
               color: '#846E63',
               marginRight: 8,
@@ -80,8 +80,8 @@ export function EntryScreen() {
                 height: 10,
               }}
             />
-          </View>
-        {/* </Pressable> */}
+          </Pressable>
+        </View>
       </View>
     </View>
   );

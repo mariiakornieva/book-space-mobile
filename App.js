@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { EntryScreen, SignInScreen, SignUpScreen } from './screens';
 import { Pressable } from 'react-native';
 import { Button } from './components';
+import { HomeNavigator } from './navigation/HomeNavigator';
 
 const Stack = createStackNavigator();
 
@@ -24,10 +25,10 @@ export default function App() {
           name="SignIn"
           component={SignInScreen}
           options={{
-            
           }}
         />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="Home" component={HomeNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
