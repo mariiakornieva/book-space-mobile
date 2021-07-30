@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import { globalStyles } from '../styles';
 
-export function Header({ title, backButton }) {
+export function Header({ title, backButton, style }) {
   return (
-    <View style={globalStyles.header}>
+    <View style={[globalStyles.header, style]}>
       {backButton}
       <Text style={globalStyles.text}>{title}</Text>
     </View>

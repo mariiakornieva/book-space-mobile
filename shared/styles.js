@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { BACKGROUND_COLOR, FONT_FAMILY, TEXT_COLOR } from "./constants";
+import { BACKGROUND_COLOR, FONT_FAMILY, TEXT_COLOR, PRIMARY_COLOR } from "./constants";
 
 export const globalStyles = StyleSheet.create({
   container: {
@@ -15,5 +15,17 @@ export const globalStyles = StyleSheet.create({
   header: {
     flex: 1,
     backgroundColor: BACKGROUND_COLOR,
+  },
+  input: {
+    color: TEXT_COLOR,
+    fontSize: 14,
+    fontFamily: 'Montserrat',
+    paddingVertical: 8,
+    paddingHorizontal: 3,
+    borderBottomWidth: 4,
+    borderBottomColor: 'rgba(132, 110, 99, .2)',
+    marginHorizontal: 40,
+    marginBottom: 36,
+    width: '100%',
   }
 });

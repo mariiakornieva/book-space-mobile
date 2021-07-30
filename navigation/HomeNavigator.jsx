@@ -7,7 +7,7 @@ const TabBar = createBottomTabNavigator();
 export function HomeNavigator() {
   return (
     <TabBar.Navigator>
-      <TabBar.Screen name="Home" component={HomeScreen} />
+    <TabBar.Screen name="Home" component={HomeScreen} />
       <TabBar.Screen name="Library" component={LibraryScreen} />
       <TabBar.Screen name="Search" component={SearchScreen} />
       <TabBar.Screen name="Space" component={SpaceScreen} />

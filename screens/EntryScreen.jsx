@@ -8,6 +8,7 @@ import { globalStyles } from '../shared/styles';
 export function EntryScreen() {
   const [loaded] = useFonts({
     'RhodiumLibre': require('../assets/fonts/Rhodium_Libre/RhodiumLibre-Regular.ttf'),
+    'Montserrat': require('../assets/fonts/Montserrat/Montserrat-Regular.ttf'),
   });
 
   const nav = useNavigation();
@@ -54,7 +55,7 @@ export function EntryScreen() {
         <Pressable onPress={() => nav.navigate('SignUp')}>
           <Button
             label="Sign Up"
-            style={{ marginBottom: 32 }}
+            // style={{ marginBottom: 32 }}
             size={{ width: 280, height: 46 }}
           />
         </Pressable>
@@ -62,6 +63,7 @@ export function EntryScreen() {
         <View style={{
           flexDirection: 'row',
           justifyContent: 'flex-end',
+          marginTop: 32,
         }}>
           <Pressable onPress={() => nav.navigate('Home')} style={{
             flexDirection: 'row',

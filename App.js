@@ -3,11 +3,13 @@ import React from 'react';
 import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { EntryScreen, SignUpScreen } from './screens';
+import { EntryScreen } from './screens';
 import { SignInScreen } from './features/SignIn';
+import { SignUpScreen } from './features/SignUp';
 import { Header } from './shared/components';
 import { HomeNavigator } from './navigation/HomeNavigator';
 import { BackButton } from './shared/components/BackButton';
+import { BACKGROUND_COLOR } from './shared/constants';
 
 const Stack = createStackNavigator();
 
@@ -15,7 +17,23 @@ export default function App() {
   return (
     <NavigationContainer>
       {/* check user in Context -- if authenticated go to Home TabNavigator */}
-      <Stack.Navigator>
+      <Stack.Navigator
+        headerMode="screen"
+        screenOptions={{
+          headerStyle: {
+            height: 100,
+          },
+          header: ({ scene, previous, navigation }) => {
+            const { options } = scene.descriptor;
+            return (
+              <Header
+                backButton={previous ? <BackButton onPress={navigation.goBack} /> : null}
+                style={options.headerStyle}
+              />
+            );
+          }
+        }}
+      >
         <Stack.Screen
           name="Entry"
           component={EntryScreen}
@@ -26,27 +44,10 @@ export default function App() {
         <Stack.Screen
           name="SignIn"
           component={SignInScreen}
-          options={{
-            headerTitleAlign: 'left',
-            headerTitle: 'Sign In',
-            headerStyle: {
-              // height: 150,
-            },
-            header: ({ scene, previous, navigation }) => {
-                return (
-                  <Header
-                    backButton={previous ? <BackButton onPress={navigation.goBack} /> : null}
-                  />
-                );
-            }
-          }}
         />
         <Stack.Screen
           name="SignUp"
           component={SignUpScreen}
-          options={{
-
-          }}
         />
         <Stack.Screen
           name="Home"
