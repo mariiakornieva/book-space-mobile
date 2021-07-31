@@ -7,7 +7,7 @@ import { EntryScreen } from './screens';
 import { SignInScreen } from './features/SignIn';
 import { SignUpScreen } from './features/SignUp';
 import { Header } from './shared/components';
-import { HomeNavigator } from './navigation/HomeNavigator';
+import { TabNavigator } from './navigation/TabNavigator';
 import { BackButton } from './shared/components/BackButton';
 import { BACKGROUND_COLOR } from './shared/constants';
 
@@ -51,7 +51,7 @@ export default function App() {
         />
         <Stack.Screen
           name="Home"
-          component={HomeNavigator}
+          component={TabNavigator}
           options={{
             headerShown: false,
           }}
