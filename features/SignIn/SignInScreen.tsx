@@ -88,7 +88,7 @@ export function SignInScreen() {
           height={40}
           viewBox="0 0 40 40"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          // xmlns="http://www.w3.org/2000/svg"
           style={{ marginRight: 16 }}
         >
           <G clipPath="url(#prefix__clip0)" fill="#3F4752">
@@ -106,7 +106,7 @@ export function SignInScreen() {
           height={40}
           viewBox="0 0 40 40"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          // xmlns="http://www.w3.org/2000/svg"
           style={{ marginRight: 16 }}
         >
           <Path
@@ -119,7 +119,7 @@ export function SignInScreen() {
           height={40}
           viewBox="0 0 40 40"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          // xmlns="http://www.w3.org/2000/svg"
         >
           <Path
             d="M35.76 16.923a18.74 18.74 0 01.317 3.445c0 9.374-6.274 16.039-15.749 16.039A16.403 16.403 0 013.922 20 16.402 16.402 0 0120.328 3.593c4.43 0 8.132 1.63 10.972 4.277l-4.625 4.625v-.012c-1.722-1.64-3.907-2.481-6.347-2.481-5.413 0-9.813 4.573-9.813 9.988 0 5.413 4.4 9.997 9.813 9.997 4.912 0 8.255-2.809 8.942-6.665h-8.942v-6.399h15.434-.002z"
