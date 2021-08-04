@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { EntryScreen } from './screens';
@@ -9,7 +8,6 @@ import { SignUpScreen } from './features/SignUp';
 import { Header } from './shared/components';
 import { TabNavigator } from './navigation/TabNavigator';
 import { BackButton } from './shared/components/BackButton';
-import { BACKGROUND_COLOR } from './shared/constants';
 
 const Stack = createStackNavigator();
 

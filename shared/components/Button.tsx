@@ -1,19 +1,32 @@
 import React from 'react';
-import PropTypes, { number } from 'prop-types';
 import { StyleSheet, View, Text } from 'react-native';
+import { ViewStyle, StyleProp } from 'react-native';
 
-export function Button({ label, size, style, primary }) {
+type Size = {
+  width: number;
+  height: number;
+};
+
+interface ButtonProps {
+  label?: string;
+  size: Size;
+  style?: ViewStyle;
+  primary?: boolean;
+}
+
+export function Button({ size, style, primary = false, label = '' }: ButtonProps) {
   const buttonTypeStyles = primary ? styles.primaryButton : styles.secondaryButton;
   const labelTypeStyles = primary ? styles.primaryLabel : styles.secondaryLabel;
 
   return (
-    <View style={{
-      ...styles.button,
-      ...buttonTypeStyles,
-      ...style,
-      width: size.width,
-      height: size.height,
-    }}>
+    <View style={[
+      styles.button,
+      buttonTypeStyles,
+      style, {
+        width: size.width,
+        height: size.height,
+      }]}
+    >
       <Text style={{
         ...styles.label,
         ...labelTypeStyles,
@@ -24,24 +37,6 @@ export function Button({ label, size, style, primary }) {
     </View>
   );
 }
-
-Button.propTypes = {
-  label: PropTypes.string,
-  size: PropTypes.shape({
-    width: PropTypes.number,
-    height: PropTypes.number,
-  }).isRequired,
-  style: PropTypes.shape({
-    marginBottom: number,
-  }),
-  primary: PropTypes.bool,
-};
-
-Button.defaultProps = {
-  label: '',
-  style: {},
-  primary: false,
-};
 
 const styles = StyleSheet.create({
   button: {

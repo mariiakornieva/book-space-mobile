@@ -131,7 +131,6 @@ export function SignInScreen() {
       <Pressable onPress={() => {}}>
         <Button
           label="Sign In"
-          // style={{ marginBottom: 32 }}
           size={{ width: 280, height: 46 }}
           primary
         />

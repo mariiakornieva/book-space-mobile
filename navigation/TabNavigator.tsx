@@ -3,6 +3,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeNavigator, LibraryScreen, MeScreen, SearchScreen, SpaceScreen } from '../screens';
 import { BACKGROUND_COLOR, PRIMARY_COLOR } from '../shared/constants';
 import { Ionicons } from '@expo/vector-icons';
+import glyphmap from 'react-native-vector-icons/glyphmaps/Ionicons.json'
+
+type MyMap<T> = {
+    [ P in keyof T ]: number
+};
+
+// spread keys after converting glyphmap into MyMap
+type MapKeys = keyof MyMap<typeof glyphmap>
 
 const TabBar = createBottomTabNavigator();
 
@@ -11,7 +19,7 @@ export function TabNavigator() {
     <TabBar.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
+          let iconName: MapKeys = 'ellipse';
 
           switch (route.name) {
             case 'Home':

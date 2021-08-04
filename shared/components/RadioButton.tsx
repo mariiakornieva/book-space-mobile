@@ -2,7 +2,12 @@ import React from 'react';
 import { View } from 'react-native';
 import { PRIMARY_COLOR_TRANSPARENT } from '../constants';
 
-export function RadioButton(props) {
+interface RadioButtonProps {
+  style: object; // TODO: figure the type
+  selected: boolean;
+};
+
+export function RadioButton(props: RadioButtonProps) {
   return (
     <View style={[{
       height: 20,

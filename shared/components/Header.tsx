@@ -1,9 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View, Text, ViewStyle } from 'react-native';
 import { globalStyles } from '../styles';
 
-export function Header({ title, backButton, style }) {
+interface HeaderProps {
+  title?: string;
+  style?: any;
+  backButton: JSX.Element | null;
+};
+
+export function Header({ backButton, style, title = '' }: HeaderProps) {
   return (
     <View style={[globalStyles.header, style]}>
       {backButton}
@@ -11,13 +16,3 @@ export function Header({ title, backButton, style }) {
     </View>
   );
 }
-
-Header.propTypes = {
-  title: PropTypes.string,
-  backButton: PropTypes.node,
-};
-
-Header.defaultProps = {
-  title: '',
-  backButton: null,
-};
