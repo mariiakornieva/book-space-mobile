@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 export function SpaceScreen() {
   return (
-    <View><Text>Space Screen</Text></View>
+    <View>
+      <Text>Space Screen</Text>
+    </View>
   );
 }

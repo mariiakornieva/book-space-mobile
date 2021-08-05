@@ -9,11 +9,16 @@ export function HomeNavigator() {
     <Stack.Navigator>
       <Stack.Screen
         name="HomeScreen"
-        options={{
-          // headerShown: false,
-        }}
-      >
-        {() => <View><Text>Home Screen</Text></View>}
+        options={
+          {
+            // headerShown: false,
+          }
+        }>
+        {() => (
+          <View>
+            <Text>Home Screen</Text>
+          </View>
+        )}
       </Stack.Screen>
     </Stack.Navigator>
   );

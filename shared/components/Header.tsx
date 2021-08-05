@@ -6,7 +6,7 @@ interface HeaderProps {
   title?: string;
   style?: any;
   backButton: JSX.Element | null;
-};
+}
 
 export function Header({ backButton, style, title = '' }: HeaderProps) {
   return (

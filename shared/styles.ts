@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { BACKGROUND_COLOR, FONT_FAMILY, TEXT_COLOR, PRIMARY_COLOR } from "./constants";
+import { StyleSheet } from 'react-native';
+import { BACKGROUND_COLOR, FONT_FAMILY, TEXT_COLOR, PRIMARY_COLOR } from './constants';
 
 export const globalStyles = StyleSheet.create({
   container: {
@@ -27,5 +27,5 @@ export const globalStyles = StyleSheet.create({
     marginHorizontal: 40,
     marginBottom: 36,
     width: '100%',
-  }
+  },
 });

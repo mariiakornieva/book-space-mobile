@@ -11,7 +11,7 @@ import { BackButton } from './shared/components/BackButton';
 
 const Stack = createStackNavigator();
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <NavigationContainer>
       {/* check user in Context -- if authenticated go to Home TabNavigator */}
@@ -29,9 +29,8 @@ export default function App() {
                 style={options.headerStyle}
               />
             );
-          }
-        }}
-      >
+          },
+        }}>
         <Stack.Screen
           name="Entry"
           component={EntryScreen}
@@ -39,14 +38,8 @@ export default function App() {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="SignIn"
-          component={SignInScreen}
-        />
-        <Stack.Screen
-          name="SignUp"
-          component={SignUpScreen}
-        />
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen
           name="Home"
           component={TabNavigator}

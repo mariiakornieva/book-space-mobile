@@ -7,8 +7,8 @@ import { globalStyles } from '../shared/styles';
 
 export function EntryScreen() {
   const [loaded] = useFonts({
-    'RhodiumLibre': require('../assets/fonts/Rhodium_Libre/RhodiumLibre-Regular.ttf'),
-    'Montserrat': require('../assets/fonts/Montserrat/Montserrat-Regular.ttf'),
+    RhodiumLibre: require('../assets/fonts/Rhodium_Libre/RhodiumLibre-Regular.ttf'),
+    Montserrat: require('../assets/fonts/Montserrat/Montserrat-Regular.ttf'),
   });
 
   const nav = useNavigation();
@@ -30,15 +30,16 @@ export function EntryScreen() {
         <Text style={styles.titleText}>Book Space</Text>
       </View>
 
-      <View style={{
-        marginVertical: 60,
-      }}>
+      <View
+        style={{
+          marginVertical: 60,
+        }}>
         <Image
           style={{
             width: 288,
             height: 194,
           }}
-          source={require("../assets/images/main.png")}
+          source={require('../assets/images/main.png')}
         />
       </View>
 
@@ -60,22 +61,25 @@ export function EntryScreen() {
           />
         </Pressable>
 
-        <View style={{
-          flexDirection: 'row',
-          justifyContent: 'flex-end',
-          marginTop: 32,
-        }}>
-          <Pressable onPress={() => nav.navigate('Home')} style={{
+        <View
+          style={{
             flexDirection: 'row',
-            alignItems: 'center',
+            justifyContent: 'flex-end',
+            marginTop: 32,
           }}>
-            <Text style={{
-              color: '#846E63',
-              marginRight: 8,
-              fontSize: 18,
-              fontFamily: 'RhodiumLibre',
-            }}
-            >
+          <Pressable
+            onPress={() => nav.navigate('Home')}
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <Text
+              style={{
+                color: '#846E63',
+                marginRight: 8,
+                fontSize: 18,
+                fontFamily: 'RhodiumLibre',
+              }}>
               Skip
             </Text>
             <Image

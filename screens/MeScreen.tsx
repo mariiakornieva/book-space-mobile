@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 export function MeScreen() {
   return (
-    <View><Text>Me</Text></View>
+    <View>
+      <Text>Me</Text>
+    </View>
   );
 }

@@ -19,19 +19,21 @@ export function Button({ size, style, primary = false, label = '' }: ButtonProps
   const labelTypeStyles = primary ? styles.primaryLabel : styles.secondaryLabel;
 
   return (
-    <View style={[
-      styles.button,
-      buttonTypeStyles,
-      style, {
-        width: size.width,
-        height: size.height,
-      }]}
-    >
-      <Text style={{
-        ...styles.label,
-        ...labelTypeStyles,
-      }}
-      >
+    <View
+      style={[
+        styles.button,
+        buttonTypeStyles,
+        style,
+        {
+          width: size.width,
+          height: size.height,
+        },
+      ]}>
+      <Text
+        style={{
+          ...styles.label,
+          ...labelTypeStyles,
+        }}>
         {label}
       </Text>
     </View>
