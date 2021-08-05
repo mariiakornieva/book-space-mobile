@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable } from 'react-native';
-import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg';
-import { FONT_FAMILY, PRIMARY_COLOR } from '../../shared/constants';
+import { PRIMARY_FONT_FAMILY, PRIMARY_COLOR, SECONDARY_FONT_FAMILY } from '../../shared/constants';
 import { globalStyles } from '../../shared/styles';
 import { Button, RadioButton } from '../../shared/components';
 
-export function SignUpScreen() {
+export function SignUpScreen(): JSX.Element {
   const [signup, setSignup] = useState(false);
 
   return (
@@ -15,28 +14,28 @@ export function SignUpScreen() {
           alignSelf: 'flex-start',
           marginBottom: 40,
           fontSize: 18,
-          fontFamily: FONT_FAMILY,
+          fontFamily: PRIMARY_FONT_FAMILY,
         }}>
         Sign Up
       </Text>
 
       <TextInput
         style={globalStyles.input}
-        onChangeText={() => {}}
+        // onChangeText={}
         // value={name}
         placeholder="Name"
       />
 
       <TextInput
         style={globalStyles.input}
-        onChangeText={() => {}}
+        // onChangeText={}
         // value={email}
         placeholder="Email"
       />
 
       <TextInput
         style={globalStyles.input}
-        onChangeText={() => {}}
+        // onChangeText={}
         // value={password}
         placeholder="Password"
         secureTextEntry={true}
@@ -63,14 +62,14 @@ export function SignUpScreen() {
             style={{
               fontSize: 10,
               color: PRIMARY_COLOR,
-              fontFamily: 'Montserrat',
+              fontFamily: SECONDARY_FONT_FAMILY,
             }}>
             Please sign me up to the latest book news{' '}
           </Text>
         </Pressable>
       </View>
 
-      <Pressable onPress={() => {}}>
+      <Pressable>
         <Button
           label="Sign Up"
           // style={{ marginBottom: 32 }}

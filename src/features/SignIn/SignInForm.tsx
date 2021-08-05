@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
+import React, { ReactFragment } from 'react';
 
-export function SignInForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState(null);
-
+export function SignInForm(): ReactFragment {
   return <></>;
 }

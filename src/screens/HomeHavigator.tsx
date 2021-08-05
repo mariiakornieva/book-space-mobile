@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-export function HomeNavigator() {
+export function HomeNavigator(): JSX.Element | null {
   return (
     <Stack.Navigator>
       <Stack.Screen

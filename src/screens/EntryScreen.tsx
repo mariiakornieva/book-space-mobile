@@ -1,47 +1,17 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, Pressable } from 'react-native';
-import { useFonts } from 'expo-font';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
 import { Button } from '../shared/components';
 import { useNavigation } from '@react-navigation/native';
 import { globalStyles } from '../shared/styles';
+import { PRIMARY_FONT_FAMILY } from '../shared/constants';
+import LogoSvg from '../../assets/images/logo.svg';
 
-export function EntryScreen() {
-  const [loaded] = useFonts({
-    RhodiumLibre: require('../assets/fonts/Rhodium_Libre/RhodiumLibre-Regular.ttf'),
-    Montserrat: require('../assets/fonts/Montserrat/Montserrat-Regular.ttf'),
-  });
-
+export function EntryScreen(): JSX.Element | null {
   const nav = useNavigation();
-
-  if (!loaded) {
-    return null;
-  }
 
   return (
     <View style={globalStyles.container}>
-      <View style={styles.title}>
-        <Image
-          style={{
-            width: 28,
-            height: 38,
-          }}
-          source={require('../assets/images/book.png')}
-        />
-        <Text style={styles.titleText}>Book Space</Text>
-      </View>
-
-      <View
-        style={{
-          marginVertical: 60,
-        }}>
-        <Image
-          style={{
-            width: 288,
-            height: 194,
-          }}
-          source={require('../assets/images/main.png')}
-        />
-      </View>
+      <LogoSvg width={250} height={250} />
 
       <View>
         <Pressable onPress={() => nav.navigate('SignIn')}>
@@ -78,36 +48,20 @@ export function EntryScreen() {
                 color: '#846E63',
                 marginRight: 8,
                 fontSize: 18,
-                fontFamily: 'RhodiumLibre',
+                fontFamily: PRIMARY_FONT_FAMILY,
               }}>
               Skip
             </Text>
-            <Image
+            {/* <Image
               source={require('../assets/images/skip.png')}
               style={{
                 width: 12,
                 height: 10,
               }}
-            />
+            /> */}
           </Pressable>
         </View>
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  title: {
-    // flex: 1,
-    flexDirection: 'row',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  titleText: {
-    fontSize: 48,
-    fontFamily: 'RhodiumLibre',
-    color: '#352d39',
-    marginLeft: 6,
-  },
-});

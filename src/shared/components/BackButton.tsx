@@ -2,11 +2,11 @@ import React from 'react';
 import Svg, { Path } from 'react-native-svg';
 import { Pressable, View } from 'react-native';
 
-interface BackButtonProps {
-  onPress: () => void;
-}
+type BackButtonProps = {
+  onPress?(): void;
+};
 
-export function BackButton({ onPress }: BackButtonProps) {
+export function BackButton({ onPress }: BackButtonProps): JSX.Element | null {
   return (
     <Pressable
       onPress={onPress}

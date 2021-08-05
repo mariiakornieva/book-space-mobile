@@ -1,13 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 import { PRIMARY_COLOR_TRANSPARENT } from '../constants';
 
-interface RadioButtonProps {
-  style: object; // TODO: figure the type
-  selected: boolean;
-}
+type RadioButtonProps = {
+  style?: ViewStyle;
+  selected?: boolean;
+};
 
-export function RadioButton(props: RadioButtonProps) {
+export function RadioButton({ style, selected = false }: RadioButtonProps): JSX.Element | null {
   return (
     <View
       style={[
@@ -20,9 +20,9 @@ export function RadioButton(props: RadioButtonProps) {
           alignItems: 'center',
           justifyContent: 'center',
         },
-        props.style,
+        style,
       ]}>
-      {props.selected ? (
+      {selected ? (
         <View
           style={{
             height: 10,

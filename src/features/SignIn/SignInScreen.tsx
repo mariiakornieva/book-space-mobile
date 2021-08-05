@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable } from 'react-native';
 import Svg, { G, Path, Defs, ClipPath } from 'react-native-svg';
-import { FONT_FAMILY, PRIMARY_COLOR } from '../../shared/constants';
+import { PRIMARY_FONT_FAMILY, PRIMARY_COLOR, SECONDARY_FONT_FAMILY } from '../../shared/constants';
 import { globalStyles } from '../../shared/styles';
 import { Button, RadioButton } from '../../shared/components';
 
-export function SignInScreen() {
+export function SignInScreen(): JSX.Element {
   const [remember, setRemember] = useState(false);
 
   return (
@@ -15,21 +15,21 @@ export function SignInScreen() {
           alignSelf: 'flex-start',
           marginBottom: 40,
           fontSize: 18,
-          fontFamily: FONT_FAMILY,
+          fontFamily: PRIMARY_FONT_FAMILY,
         }}>
         Sign In
       </Text>
 
       <TextInput
         style={globalStyles.input}
-        onChangeText={() => {}}
+        // onChangeText={}
         // value={email}
         placeholder="Email"
       />
 
       <TextInput
         style={globalStyles.input}
-        onChangeText={() => {}}
+        // onChangeText={}
         // value={password}
         placeholder="Password"
         secureTextEntry={true}
@@ -56,7 +56,7 @@ export function SignInScreen() {
             style={{
               fontSize: 10,
               color: PRIMARY_COLOR,
-              fontFamily: 'Montserrat',
+              fontFamily: SECONDARY_FONT_FAMILY,
             }}>
             Remember me
           </Text>
@@ -66,7 +66,7 @@ export function SignInScreen() {
           style={{
             fontSize: 10,
             color: PRIMARY_COLOR,
-            fontFamily: 'Montserrat',
+            fontFamily: SECONDARY_FONT_FAMILY,
           }}>
           Forgot password?
         </Text>
@@ -134,7 +134,7 @@ export function SignInScreen() {
         </Svg>
       </View>
 
-      <Pressable onPress={() => {}}>
+      <Pressable>
         <Button label="Sign In" size={{ width: 280, height: 46 }} primary />
       </Pressable>
     </View>

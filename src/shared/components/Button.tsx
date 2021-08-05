@@ -1,20 +1,26 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { ViewStyle, StyleProp } from 'react-native';
+import { ViewStyle } from 'react-native';
+import { PRIMARY_FONT_FAMILY } from '../constants';
 
 type Size = {
   width: number;
   height: number;
 };
 
-interface ButtonProps {
+type ButtonProps = {
   label?: string;
   size: Size;
   style?: ViewStyle;
   primary?: boolean;
-}
+};
 
-export function Button({ size, style, primary = false, label = '' }: ButtonProps) {
+export function Button({
+  size,
+  style,
+  primary = false,
+  label = '',
+}: ButtonProps): JSX.Element | null {
   const buttonTypeStyles = primary ? styles.primaryButton : styles.secondaryButton;
   const labelTypeStyles = primary ? styles.primaryLabel : styles.secondaryLabel;
 
@@ -49,7 +55,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 18,
-    fontFamily: 'RhodiumLibre',
+    fontFamily: PRIMARY_FONT_FAMILY,
   },
   primaryButton: {
     backgroundColor: '#846E63',

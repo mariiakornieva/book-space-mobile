@@ -14,11 +14,11 @@ type MapKeys = keyof MyMap<typeof glyphmap>;
 
 const TabBar = createBottomTabNavigator();
 
-export function TabNavigator() {
+export function TabNavigator(): JSX.Element {
   return (
     <TabBar.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ color, size }) => {
           let iconName: MapKeys = 'ellipse';
 
           switch (route.name) {

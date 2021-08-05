@@ -2,16 +2,29 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { EntryScreen } from './screens';
-import { SignInScreen } from './features/SignIn';
-import { SignUpScreen } from './features/SignUp';
-import { Header } from '../shared/components';
-import { TabNavigator } from './navigation/TabNavigator';
-import { BackButton } from '../shared/components/BackButton';
+import { EntryScreen } from './src/screens';
+import { SignInScreen } from './src/features/SignIn';
+import { SignUpScreen } from './src/features/SignUp';
+import { Header } from './src/shared/components';
+import { TabNavigator } from './src/navigation/TabNavigator';
+import { BackButton } from './src/shared/components/BackButton';
+import { Montserrat_400Regular, Montserrat_600SemiBold } from '@expo-google-fonts/montserrat';
+import { DarkerGrotesque_700Bold } from '@expo-google-fonts/darker-grotesque';
+import { useFonts } from 'expo-font';
 
 const Stack = createStackNavigator();
 
-export default function App(): JSX.Element {
+export default function App(): JSX.Element | null {
+  const [fontsLoaded] = useFonts({
+    Montserrat_400Regular,
+    Montserrat_600SemiBold,
+    DarkerGrotesque_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <NavigationContainer>
       {/* check user in Context -- if authenticated go to Home TabNavigator */}
@@ -25,7 +38,7 @@ export default function App(): JSX.Element {
             const { options } = scene.descriptor;
             return (
               <Header
-                backButton={previous ? <BackButton onPress={navigation.goBack} /> : null}
+                backButton={previous ? <BackButton onPress={() => navigation.goBack()} /> : null}
                 style={options.headerStyle}
               />
             );

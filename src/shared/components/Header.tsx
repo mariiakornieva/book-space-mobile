@@ -1,16 +1,16 @@
 import React from 'react';
-import { View, Text, ViewStyle } from 'react-native';
+import { Animated, StyleProp, View, Text, ViewStyle } from 'react-native';
 import { globalStyles } from '../styles';
 
-interface HeaderProps {
+type HeaderProps = {
   title?: string;
-  style?: any;
+  style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
   backButton: JSX.Element | null;
-}
+};
 
-export function Header({ backButton, style, title = '' }: HeaderProps) {
+export function Header({ backButton, style, title = '' }: HeaderProps): JSX.Element | null {
   return (
-    <View style={[globalStyles.header, style]}>
+    <View style={[globalStyles.header, style as StyleProp<ViewStyle>]}>
       {backButton}
       <Text style={globalStyles.text}>{title}</Text>
     </View>
