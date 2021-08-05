@@ -5,9 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { EntryScreen } from './screens';
 import { SignInScreen } from './features/SignIn';
 import { SignUpScreen } from './features/SignUp';
-import { Header } from './shared/components';
+import { Header } from '../shared/components';
 import { TabNavigator } from './navigation/TabNavigator';
-import { BackButton } from './shared/components/BackButton';
+import { BackButton } from '../shared/components/BackButton';
 
 const Stack = createStackNavigator();
 
