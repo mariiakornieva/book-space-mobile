@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { ViewStyle } from 'react-native';
-import { PRIMARY_FONT_FAMILY } from '../constants';
+import { PRIMARY_COLOR, PRIMARY_FONT_FAMILY } from '../constants';
 
 type Size = {
   width: number;
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     fontFamily: PRIMARY_FONT_FAMILY,
   },
   primaryButton: {
-    backgroundColor: '#846E63',
+    backgroundColor: PRIMARY_COLOR,
     borderWidth: 0,
   },
   primaryLabel: {
@@ -67,10 +67,10 @@ const styles = StyleSheet.create({
   secondaryButton: {
     backgroundColor: 'transparent',
     borderWidth: 1,
-    borderColor: '#fff',
+    borderColor: PRIMARY_COLOR,
     borderStyle: 'solid',
   },
   secondaryLabel: {
-    color: '#846E63',
+    color: PRIMARY_COLOR,
   },
 });
