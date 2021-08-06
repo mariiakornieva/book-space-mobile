@@ -11,6 +11,10 @@ import { BackButton } from './src/shared/components/BackButton';
 import { Montserrat_400Regular, Montserrat_600SemiBold } from '@expo-google-fonts/montserrat';
 import { DarkerGrotesque_700Bold } from '@expo-google-fonts/darker-grotesque';
 import { useFonts } from 'expo-font';
+import Amplify from 'aws-amplify';
+import config from './src/aws-exports';
+
+Amplify.configure(config);
 
 const Stack = createStackNavigator();
 
