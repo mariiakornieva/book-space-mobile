@@ -1,13 +1,40 @@
-import React from 'react';
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Pressable } from 'react-native';
 import { Button } from '../shared/components';
 import { useNavigation } from '@react-navigation/native';
 import { globalStyles } from '../shared/styles';
 import { PRIMARY_COLOR, PRIMARY_FONT_FAMILY } from '../shared/constants';
 import LogoSvg from '../../assets/images/logo.svg';
 import SkipSvg from '../../assets/icons/skip.svg';
+import Keychain from 'react-native-keychain';
+import { Auth } from 'aws-amplify';
 
 export function EntryScreen(): JSX.Element | null {
+  const [, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchKey = async (): Promise<void> => {
+      try {
+        const creds = await Keychain.getInternetCredentials('auth');
+
+        if (creds) {
+          const { username, password } = creds;
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          const user = await Auth.signIn(username, password);
+          setLoading(false);
+
+          if (user) {
+            nav.navigate('Home');
+          }
+        }
+      } catch {
+        setLoading(false);
+      }
+    };
+
+    void fetchKey();
+  }, []);
+
   const nav = useNavigation();
 
   return (

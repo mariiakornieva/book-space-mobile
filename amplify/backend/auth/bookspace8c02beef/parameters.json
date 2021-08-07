@@ -1,62 +1,44 @@
 {
-    "identityPoolName": "bookspace8c02beef_identitypool_8c02beef",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "booksp8c02beef",
-    "userPoolName": "bookspace8c02beef_userpool_8c02beef",
-    "autoVerifiedAttributes": [
-        "email"
-    ],
-    "mfaConfiguration": "OFF",
-    "mfaTypes": [
-        "SMS Text Message"
-    ],
-    "smsAuthenticationMessage": "Your authentication code is {####}",
-    "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your verification code",
-    "emailVerificationMessage": "Your verification code is {####}",
-    "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [],
-    "requiredAttributes": [
-        "email"
-    ],
-    "aliasAttributes": [
-        "email"
-    ],
-    "userpoolClientGenerateSecret": false,
-    "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [
-        "email"
-    ],
-    "userpoolClientReadAttributes": [
-        "email"
-    ],
-    "userpoolClientLambdaRole": "booksp8c02beef_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
-    "sharedId": "8c02beef",
-    "resourceName": "bookspace8c02beef",
-    "authSelections": "identityPoolAndUserPool",
-    "authRoleArn": {
-        "Fn::GetAtt": [
-            "AuthRole",
-            "Arn"
-        ]
-    },
-    "unauthRoleArn": {
-        "Fn::GetAtt": [
-            "UnauthRole",
-            "Arn"
-        ]
-    },
-    "useDefault": "default",
-    "triggers": "{}",
-    "userPoolGroupList": [],
-    "serviceName": "Cognito",
-    "usernameCaseSensitive": false,
-    "parentStack": {
-        "Ref": "AWS::StackId"
-    },
-    "breakCircularDependency": true,
-    "permissions": [],
-    "dependsOn": []
+  "identityPoolName": "bookspace8c02beef_identitypool_8c02beef",
+  "allowUnauthenticatedIdentities": false,
+  "resourceNameTruncated": "booksp8c02beef",
+  "userPoolName": "bookspace8c02beef_userpool_8c02beef",
+  "autoVerifiedAttributes": ["email"],
+  "mfaConfiguration": "OFF",
+  "mfaTypes": ["SMS Text Message"],
+  "smsAuthenticationMessage": "Your authentication code is {####}",
+  "smsVerificationMessage": "Your verification code is {####}",
+  "emailVerificationSubject": "Your verification code",
+  "emailVerificationMessage": "Your verification code is {####}",
+  "defaultPasswordPolicy": false,
+  "passwordPolicyMinLength": 8,
+  "passwordPolicyCharacters": [],
+  "requiredAttributes": ["email"],
+  "aliasAttributes": ["email"],
+  "userpoolClientGenerateSecret": false,
+  "userpoolClientRefreshTokenValidity": 30,
+  "userpoolClientWriteAttributes": ["email"],
+  "userpoolClientReadAttributes": ["email"],
+  "userpoolClientLambdaRole": "booksp8c02beef_userpoolclient_lambda_role",
+  "userpoolClientSetAttributes": false,
+  "sharedId": "8c02beef",
+  "resourceName": "bookspace8c02beef",
+  "authSelections": "identityPoolAndUserPool",
+  "authRoleArn": {
+    "Fn::GetAtt": ["AuthRole", "Arn"]
+  },
+  "unauthRoleArn": {
+    "Fn::GetAtt": ["UnauthRole", "Arn"]
+  },
+  "useDefault": "default",
+  "triggers": "{}",
+  "userPoolGroupList": [],
+  "serviceName": "Cognito",
+  "usernameCaseSensitive": false,
+  "parentStack": {
+    "Ref": "AWS::StackId"
+  },
+  "breakCircularDependency": true,
+  "permissions": [],
+  "dependsOn": []
 }

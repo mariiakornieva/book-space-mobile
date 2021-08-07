@@ -21,6 +21,11 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: BACKGROUND_COLOR,
   },
+  pageTitle: {
+    alignSelf: 'flex-start',
+    fontSize: 24,
+    fontFamily: PRIMARY_FONT_FAMILY,
+  },
   input: {
     color: TEXT_COLOR,
     fontSize: 14,
