@@ -10,6 +10,11 @@
       "StackName": "amplify-bookspace-dev-192120",
       "StackId": "arn:aws:cloudformation:eu-central-1:739331749843:stack/amplify-bookspace-dev-192120/2df7b880-f609-11eb-9793-06a01ba39f10",
       "AmplifyAppId": "d2pdfb570vtvx"
+    },
+    "categories": {
+      "auth": {
+        "bookspace8c02beef": {}
+      }
     }
   }
 }

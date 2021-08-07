@@ -11,7 +11,5 @@
       "StartCommand": "expo start"
     }
   },
-  "providers": [
-    "awscloudformation"
-  ]
+  "providers": ["awscloudformation"]
 }
